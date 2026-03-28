@@ -197,6 +197,18 @@ const Tasks = {
             success: true,
             message: "Usuario asignado actualizado correctamente."
         };
-    }
+    },
+
+    getTasksByUser(userId, stateFilter) {
+        let tasks = Storage.getTasks();
+
+        tasks = tasks.filter(task => task.user_id === userId);
+
+        if (stateFilter !== "Todas") {
+            tasks = tasks.filter(task => task.state === stateFilter);
+        }
+
+        return tasks;
+    },
 
 };

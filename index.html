@@ -82,7 +82,9 @@
 
             <div class="card">
                 <h2>Listado general de tareas</h2>
-                <div id="task-list"></div>
+                <div class="task-container">
+                    <div id="task-list"></div>
+                </div>
             </div>
 
             <!-- FUNCION AGREGAR TAREAS -->
@@ -114,7 +116,55 @@
 
         </section>
 
-        
+        <!-- SECCION DE VISTA DEL USUARIO NORMAL -->
+        <section id="user-section" class="hidden">
+            <div class="card top-bar">
+                <div>
+                    <h1>Mis tareas</h1>
+                    <p id="welcome-user"></p>
+                </div>
+                <button id="logout-user-btn" class="btn-logout">Cerrar sesión</button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total</h3>
+                    <p id="user-total">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pendientes</h3>
+                    <p id="user-pending">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Completadas</h3>
+                    <p id="user-completed">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Vencidas</h3>
+                    <p id="user-overdue">0</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Filtros</h2>
+
+                <div class="form-group">
+                    <label for="user-filter-state">Filtrar por estado</label>
+                    <select id="user-filter-state">
+                        <option value="Todas">Todas</option>
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Completada">Completada</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Mis tareas</h2>
+                <div class="task-container">
+                    <div id="user-task-list"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
 

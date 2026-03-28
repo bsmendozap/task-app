@@ -1,4 +1,6 @@
 const Storage = {
+
+    //Carga de Data de usuarios
     initUsers() {
         const users = JSON.parse(localStorage.getItem("users"));
 
@@ -13,33 +15,106 @@ const Storage = {
         }
     },
 
+    //Carga de data de las tareas
     initTasks() {
         const tasks = JSON.parse(localStorage.getItem("tasks"));
 
-        if (!tasks) {
+        if (!tasks || tasks.length === 0) {
             const defaultTasks = [
                 {
                     id_task: 1,
-                    title: "Revisar reporte",
+                    title: "Revisar reporte financiero",
                     state: "Pendiente",
                     creation_date: "2026-03-27",
-                    expiration_date: "2026-03-29",
+                    expiration_date: "2026-03-30",
                     user_id: 2
                 },
                 {
                     id_task: 2,
-                    title: "Actualizar documentación",
+                    title: "Actualizar documentación del sistema",
                     state: "Completada",
-                    creation_date: "2026-03-27",
-                    expiration_date: "2026-03-30",
-                    user_id: 1
+                    creation_date: "2026-03-25",
+                    expiration_date: "2026-03-28",
+                    user_id: 2
                 },
                 {
                     id_task: 3,
-                    title: "Preparar reunión",
+                    title: "Preparar reunión con clientes",
                     state: "Pendiente",
                     creation_date: "2026-03-20",
                     expiration_date: "2026-03-24",
+                    user_id: 2
+                },
+                {
+                    id_task: 4,
+                    title: "Corregir errores de login",
+                    state: "Pendiente",
+                    creation_date: "2026-03-26",
+                    expiration_date: "2026-03-29",
+                    user_id: 3
+                },
+                {
+                    id_task: 5,
+                    title: "Implementar filtros de tareas",
+                    state: "Completada",
+                    creation_date: "2026-03-22",
+                    expiration_date: "2026-03-26",
+                    user_id: 3
+                },
+                {
+                    id_task: 6,
+                    title: "Optimizar vista móvil",
+                    state: "Pendiente",
+                    creation_date: "2026-03-18",
+                    expiration_date: "2026-03-21",
+                    user_id: 3
+                },
+                {
+                    id_task: 7,
+                    title: "Diseñar formulario de usuarios",
+                    state: "Pendiente",
+                    creation_date: "2026-03-28",
+                    expiration_date: "2026-04-02",
+                    user_id: 1
+                },
+                {
+                    id_task: 8,
+                    title: "Revisar permisos de administrador",
+                    state: "Completada",
+                    creation_date: "2026-03-19",
+                    expiration_date: "2026-03-23",
+                    user_id: 1
+                },
+                {
+                    id_task: 9,
+                    title: "Validar fechas de vencimiento",
+                    state: "Pendiente",
+                    creation_date: "2026-03-21",
+                    expiration_date: "2026-03-22",
+                    user_id: 1
+                },
+                {
+                    id_task: 10,
+                    title: "Crear módulo de estadísticas",
+                    state: "Pendiente",
+                    creation_date: "2026-03-28",
+                    expiration_date: "2026-04-05",
+                    user_id: 2
+                },
+                {
+                    id_task: 11,
+                    title: "Probar reasignación de tareas",
+                    state: "Pendiente",
+                    creation_date: "2026-03-23",
+                    expiration_date: "2026-03-27",
+                    user_id: 3
+                },
+                {
+                    id_task: 12,
+                    title: "Ajustar estilos del dashboard",
+                    state: "Completada",
+                    creation_date: "2026-03-24",
+                    expiration_date: "2026-03-29",
                     user_id: 2
                 }
             ];

@@ -1,5 +1,6 @@
 const Auth = {
 
+    //Validación de credenciales del usuario
     login(username, password) {
 
         const users = Storage.getUsers();
@@ -24,10 +25,12 @@ const Auth = {
         };
     },
 
+    //Cierre de sesión
     logout() {
         Storage.clearCurrentUser();
     },
 
+    //Obtención del usuario autenticado
     getCurrentUser() {
         return Storage.getCurrentUser();
     }
