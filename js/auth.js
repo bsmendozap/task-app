@@ -22,5 +22,14 @@ const Auth = {
             success: true,
             user: userFound
         };
+    },
+
+    logout() {
+        Storage.clearCurrentUser();
+    },
+
+    getCurrentUser() {
+        return Storage.getCurrentUser();
     }
+
 };
