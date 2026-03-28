@@ -1,8 +1,11 @@
 const Tasks = {
+
+    //Metodo para obtener las tareas
     getAllTasks() {
         return Storage.getTasks();
     },
 
+    //Metodo para filtrar tareas por estado
     getFilteredTasks(stateFilter, userFilter) {
         let tasks = this.getAllTasks();
 
@@ -17,6 +20,7 @@ const Tasks = {
         return tasks;
     },
 
+    //Metodo para marcar tareas completadas 
     completeTask(taskId) {
         const tasks = Storage.getTasks();
 
@@ -30,12 +34,14 @@ const Tasks = {
         Storage.saveTasks(updatedTasks);
     },
 
+    //Metodo para eliminar tareas
     deleteTask(taskId) {
         const tasks = Storage.getTasks();
         const updatedTasks = tasks.filter(task => task.id_task !== taskId);
         Storage.saveTasks(updatedTasks);
     },
 
+    //Metodo para calcular estadisticas de las tareas
     getStats() {
         const tasks = Storage.getTasks();
         const today = new Date().toISOString().split("T")[0];
@@ -48,6 +54,7 @@ const Tasks = {
         };
     },
 
+    //Metodo para crear una tarea
     addTask(title, expirationDate, userId) {
         const tasks = Storage.getTasks();
         const users = Storage.getUsers();
@@ -94,6 +101,7 @@ const Tasks = {
         };
     },
 
+    //Metodo para actualizar fecha
     updateTaskDate(taskId, newExpirationDate) {
         const tasks = Storage.getTasks();
 
@@ -145,6 +153,7 @@ const Tasks = {
         };
     },
 
+    //Metodo para cambiar usuario asignado
     updateTaskUser(taskId, newUserId) {
         const tasks = Storage.getTasks();
         const users = Storage.getUsers();
@@ -199,6 +208,7 @@ const Tasks = {
         };
     },
 
+    //Metodo para mostrar tarea por usuario
     getTasksByUser(userId, stateFilter) {
         let tasks = Storage.getTasks();
 
